@@ -17,13 +17,18 @@
             theme: {
                 extend: {
                     colors: {
+                        // 파란색 대신 초록색(Emerald) 계열로 브랜드 컬러 전면 교체
                         brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            900: '#1e3a8a',
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
                         },
                         neutral: {
                             850: '#202025',
@@ -63,11 +68,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="bg-white/10 p-2 rounded-lg backdrop-blur-md border border-white/20">
-                    <i class="fa-solid fa-city text-2xl text-amber-400"></i>
+                    <i class="fa-solid fa-tree-city text-2xl text-brand-300"></i>
                 </div>
                 <div>
                     <h1 class="text-xl sm:text-2xl font-black tracking-tight">우리 동네 아파트 실거래가 대시보드</h1>
-                    <p class="text-xs text-blue-100 mt-0.5">국토교통부 실거래가 기반 실시간 데이터 대시보드</p>
+                    <p class="text-xs text-brand-100 mt-0.5">국토교통부 실거래가 기반 실시간 데이터 대시보드</p>
                 </div>
             </div>
             
@@ -176,9 +181,9 @@
                 <div class="bg-white rounded-3xl border border-slate-100 p-6 shadow-sm flex items-center justify-between hover:scale-[1.02] transition-transform duration-300">
                     <div class="flex flex-col gap-1">
                         <span class="text-xs font-semibold text-slate-400 tracking-wider uppercase">전체 거래 건수</span>
-                        <h3 class="text-3xl font-black text-slate-800" id="kpi-total-count">0<span class="text-sm font-medium text-slate-500 ml-1">건</span></h3>
+                        <h3 class="text-3xl font-black text-brand-700" id="kpi-total-count">0<span class="text-sm font-medium text-brand-500 ml-1">건</span></h3>
                     </div>
-                    <div class="bg-blue-50 p-4 rounded-2xl text-brand-600">
+                    <div class="bg-brand-50 p-4 rounded-2xl text-brand-600">
                         <i class="fa-solid fa-handshake text-2xl"></i>
                     </div>
                 </div>
@@ -187,9 +192,9 @@
                 <div class="bg-white rounded-3xl border border-slate-100 p-6 shadow-sm flex items-center justify-between hover:scale-[1.02] transition-transform duration-300">
                     <div class="flex flex-col gap-1">
                         <span class="text-xs font-semibold text-slate-400 tracking-wider uppercase">평균 거래금액</span>
-                        <h3 class="text-2xl font-black text-slate-800 tracking-tight" id="kpi-avg-price">0원</h3>
+                        <h3 class="text-2xl font-black text-brand-600 tracking-tight" id="kpi-avg-price">0원</h3>
                     </div>
-                    <div class="bg-emerald-50 p-4 rounded-2xl text-emerald-600">
+                    <div class="bg-brand-50 p-4 rounded-2xl text-brand-600">
                         <i class="fa-solid fa-calculator text-2xl"></i>
                     </div>
                 </div>
@@ -198,9 +203,9 @@
                 <div class="bg-white rounded-3xl border border-slate-100 p-6 shadow-sm flex items-center justify-between hover:scale-[1.02] transition-transform duration-300">
                     <div class="flex flex-col gap-1">
                         <span class="text-xs font-semibold text-slate-400 tracking-wider uppercase">최고 거래금액</span>
-                        <h3 class="text-2xl font-black text-slate-800 tracking-tight text-red-600" id="kpi-max-price">0원</h3>
+                        <h3 class="text-2xl font-black text-emerald-600 tracking-tight" id="kpi-max-price">0원</h3>
                     </div>
-                    <div class="bg-red-50 p-4 rounded-2xl text-red-600">
+                    <div class="bg-emerald-50 p-4 rounded-2xl text-emerald-600">
                         <i class="fa-solid fa-arrow-trend-up text-2xl"></i>
                     </div>
                 </div>
@@ -209,9 +214,9 @@
                 <div class="bg-white rounded-3xl border border-slate-100 p-6 shadow-sm flex items-center justify-between hover:scale-[1.02] transition-transform duration-300">
                     <div class="flex flex-col gap-1">
                         <span class="text-xs font-semibold text-slate-400 tracking-wider uppercase">최저 거래금액</span>
-                        <h3 class="text-2xl font-black text-slate-800 tracking-tight text-blue-600" id="kpi-min-price">0원</h3>
+                        <h3 class="text-2xl font-black text-teal-600 tracking-tight" id="kpi-min-price">0원</h3>
                     </div>
-                    <div class="bg-blue-50 p-4 rounded-2xl text-blue-600">
+                    <div class="bg-teal-50 p-4 rounded-2xl text-teal-600">
                         <i class="fa-solid fa-arrow-trend-down text-2xl"></i>
                     </div>
                 </div>
@@ -236,7 +241,7 @@
                 <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 sm:p-8 flex flex-col gap-6">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-4">
                         <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-chart-pie text-indigo-500 text-lg"></i>
+                            <i class="fa-solid fa-chart-pie text-brand-500 text-lg"></i>
                             <h3 class="text-lg font-bold text-slate-800">동별 거래 비중</h3>
                         </div>
                     </div>
@@ -323,7 +328,7 @@
         </div>
     </footer>
 
-    <!-- Custom Modal/Toast Alerts for Notifications (Never use browser alert) -->
+    <!-- Custom Modal/Toast Alerts for Notifications -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3 pointer-events-none">
         <!-- Toast elements dynamically generated here -->
     </div>
@@ -333,7 +338,7 @@
         // Constants
         const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBZF-rt20_e9TuWfqTNg-RTFl_fONGkonNiAUsao9__9VrV17PY2tiUW_om6WeXkVzt1YD2_uPZBaQ/pub?gid=493066175&single=true&output=csv';
         
-        // Demo/Fallback Data if network fetch fails
+        // Demo/Fallback Data
         const DEMO_CSV_DATA = `거래일자,아파트명,법정동,전용면적(㎡),층,거래금액(만원),건축년도
 20231005,현대아이파크,도화동,84.95,12,65000,2015
 20231012,삼성래미안,주안동,59.98,7,42000,2008
@@ -649,7 +654,7 @@
             const count = filteredData.length;
             
             if (count === 0) {
-                document.getElementById('kpi-total-count').textContent = "0건";
+                document.getElementById('kpi-total-count').innerHTML = `0<span class="text-sm font-medium text-brand-500 ml-1">건</span>`;
                 document.getElementById('kpi-avg-price').textContent = "0원";
                 document.getElementById('kpi-max-price').textContent = "0원";
                 document.getElementById('kpi-min-price').textContent = "0원";
@@ -662,7 +667,7 @@
             const max = Math.max(...prices);
             const min = Math.min(...prices);
 
-            document.getElementById('kpi-total-count').innerHTML = `${count.toLocaleString()}<span class="text-xs font-semibold text-slate-400 ml-1">건</span>`;
+            document.getElementById('kpi-total-count').innerHTML = `${count.toLocaleString()}<span class="text-xs font-semibold text-brand-500 ml-1">건</span>`;
             document.getElementById('kpi-avg-price').textContent = formatPrice(Math.round(avg));
             document.getElementById('kpi-max-price').textContent = formatPrice(max);
             document.getElementById('kpi-min-price').textContent = formatPrice(min);
@@ -716,21 +721,21 @@
                         {
                             label: '평균 거래금액(만원)',
                             data: averagePrices,
-                            borderColor: '#2563eb',
-                            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                            borderColor: '#059669', // 진한 초록 (brand-600)
+                            backgroundColor: 'rgba(5, 150, 105, 0.1)',
                             borderWidth: 3,
                             fill: true,
                             tension: 0.3,
                             yAxisID: 'yPrice',
-                            pointBackgroundColor: '#2563eb',
+                            pointBackgroundColor: '#059669',
                             pointHoverRadius: 7
                         },
                         {
                             label: '거래량(건)',
                             data: transactionCounts,
                             type: 'bar',
-                            backgroundColor: 'rgba(251, 191, 36, 0.8)',
-                            borderColor: '#fbbf24',
+                            backgroundColor: 'rgba(16, 185, 129, 0.8)', // 밝은 초록 (brand-500)
+                            borderColor: '#10b981',
                             borderWidth: 1,
                             yAxisID: 'yCount',
                             barThickness: 24,
@@ -838,12 +843,13 @@
                     labels: sortedDongs.slice(0, 5), // Top 5
                     datasets: [{
                         data: dongCounts.slice(0, 5),
+                        // 초록색 계열 그라데이션
                         backgroundColor: [
-                            '#2563eb',
-                            '#3b82f6',
-                            '#60a5fa',
-                            '#93c5fd',
-                            '#cbd5e1'
+                            '#064e3b', // brand-900 (가장 진한 초록)
+                            '#047857', // brand-700
+                            '#059669', // brand-600
+                            '#10b981', // brand-500
+                            '#34d399'  // brand-400 (밝은 초록)
                         ],
                         borderWidth: 2,
                         borderColor: '#ffffff'
@@ -917,13 +923,13 @@
             tableBody.innerHTML = "";
             paginatedData.forEach(item => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-slate-50/70 transition-colors duration-150 border-b border-slate-100";
+                tr.className = "hover:bg-brand-50/60 transition-colors duration-150 border-b border-slate-100";
                 
                 // Construct Table Content
                 tr.innerHTML = `
                     <td class="py-4 px-6 font-medium text-slate-500 whitespace-nowrap">${item.formattedDate}</td>
                     <td class="py-4 px-6 font-semibold text-slate-800">${item.dong}</td>
-                    <td class="py-4 px-6 font-bold text-brand-900">${item.aptName}</td>
+                    <td class="py-4 px-6 font-bold text-slate-900">${item.aptName}</td>
                     <td class="py-4 px-6 text-right font-medium text-slate-600">${item.area.toFixed(2)} ㎡</td>
                     <td class="py-4 px-6 text-center text-slate-500">${item.floor}층</td>
                     <td class="py-4 px-6 text-right font-bold text-slate-950">${formatPrice(item.price)}</td>
@@ -1008,16 +1014,16 @@
             }
         }
 
-        // Modular Custom Toast Alert Generator (Avoid blocking native alerts)
+        // Modular Custom Toast Alert Generator
         function showToast(title, message, type = 'info') {
             const toastContainer = document.getElementById('toast-container');
             
             let bgClass = "bg-white border-slate-200";
-            let iconClass = "fa-circle-info text-blue-500";
+            let iconClass = "fa-circle-info text-brand-500";
             
             if (type === 'success') {
-                bgClass = "bg-emerald-50 border-emerald-100";
-                iconClass = "fa-circle-check text-emerald-500";
+                bgClass = "bg-brand-50 border-brand-100";
+                iconClass = "fa-circle-check text-brand-500";
             } else if (type === 'error') {
                 bgClass = "bg-red-50 border-red-100";
                 iconClass = "fa-circle-exclamation text-red-500";
@@ -1051,3 +1057,4 @@
     </script>
 </body>
 </html>
+```
