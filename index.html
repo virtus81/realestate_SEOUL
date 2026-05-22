@@ -921,10 +921,16 @@
 
             // Populate Table Rows
             tableBody.innerHTML = "";
-            paginatedData.forEach(item => {
+            paginatedData.forEach((item, index) => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-brand-50/60 transition-colors duration-150 border-b border-slate-100";
                 
+                // 1. 짝수/홀수 줄무늬 및 2. hover 시 배경색 변경 클래스 적용
+                const bgStripeClass = index % 2 === 0 ? 'bg-white' : 'bg-slate-50/70';
+                tr.className = `${bgStripeClass} hover:bg-brand-100/60 transition-colors duration-150 border-b border-slate-100`;
+                
+                // 3. 5억 이상 (50,000 만원) 거래금액 빨간색 강조 클래스
+                const priceColorClass = item.price >= 50000 ? 'text-red-500' : 'text-slate-950';
+
                 // Construct Table Content
                 tr.innerHTML = `
                     <td class="py-4 px-6 font-medium text-slate-500 whitespace-nowrap">${item.formattedDate}</td>
@@ -932,7 +938,7 @@
                     <td class="py-4 px-6 font-bold text-slate-900">${item.aptName}</td>
                     <td class="py-4 px-6 text-right font-medium text-slate-600">${item.area.toFixed(2)} ㎡</td>
                     <td class="py-4 px-6 text-center text-slate-500">${item.floor}층</td>
-                    <td class="py-4 px-6 text-right font-bold text-slate-950">${formatPrice(item.price)}</td>
+                    <td class="py-4 px-6 text-right font-bold ${priceColorClass}">${formatPrice(item.price)}</td>
                     <td class="py-4 px-6 text-center text-slate-400">${item.buildYear > 0 ? item.buildYear + '년' : '-'}</td>
                 `;
                 tableBody.appendChild(tr);
@@ -1057,4 +1063,3 @@
     </script>
 </body>
 </html>
-```
